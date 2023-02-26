@@ -1,5 +1,5 @@
 config:
   aws-backstage:containerPort: "80"
   aws-backstage:cpu: "512"
-  aws-backstage:memory: "128"
+  aws-backstage:memory: "512"
   aws:region: eu-west-1

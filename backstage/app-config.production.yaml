@@ -14,7 +14,9 @@ backend:
   listen: ":80"
 
   # config options: https://node-postgres.com/api/client
-  # database:
+  database:
+    client: better-sqlite3
+    connection: ":memory:"
   # client: pg
   # connection:
   #   host: ${POSTGRES_HOST}

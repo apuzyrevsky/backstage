@@ -21,7 +21,7 @@ func main() {
 		if param := cfg.GetInt("cpu"); param != 0 {
 			cpu = param
 		}
-		memory := 128
+		memory := 512
 		if param := cfg.GetInt("memory"); param != 0 {
 			memory = param
 		}
@@ -50,7 +50,8 @@ func main() {
 		image, err := ecrx.NewImage(ctx, "image", &ecr.ImageArgs{
 			RepositoryUrl: repo.Url,
 			Path:          pulumi.String("../"),
-			Dockerfile:    pulumi.String("../package/backend/Dockerfile"),
+			Dockerfile:    pulumi.String("../packages/backend/Dockerfile"),
+			Env:           pulumi.ToStringMap(map[string]string{"DOCKER_BUILDKIT": "1"})
 		})
 		if err != nil {
 			return err

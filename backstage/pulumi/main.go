@@ -51,7 +51,7 @@ func main() {
 			RepositoryUrl: repo.Url,
 			Path:          pulumi.String("../"),
 			Dockerfile:    pulumi.String("../packages/backend/Dockerfile"),
-			Env:           pulumi.ToStringMap(map[string]string{"DOCKER_BUILDKIT": "1"})
+			Env:           pulumi.ToStringMap(map[string]string{"DOCKER_BUILDKIT": "1"}),
 		})
 		if err != nil {
 			return err
